@@ -1,0 +1,9 @@
+{
+  "extends": "@water/tsconfig/compiled-package.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "types": ["node"]
+  },
+  "include": ["src", "drizzle.config.ts"],
+  "exclude": ["node_modules"]
+}
