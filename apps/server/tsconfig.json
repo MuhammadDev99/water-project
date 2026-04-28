@@ -1,0 +1,10 @@
+{
+  "extends": "@water/tsconfig/base.json",
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "target": "ESNext"
+  },
+  "include": ["src"]
+}

@@ -6,7 +6,7 @@ import { nextCookies } from "better-auth/next-js";
 
 import { initAuth } from "@water/auth";
 
-import { env } from "~/env";
+import { env } from "@/env";
 
 
 export const auth = initAuth({

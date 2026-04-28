@@ -44,6 +44,7 @@ TREE_ONLY_DIRS = {
 # If ANYTHING is added here, the script switches to "Exclusive Mode" 
 # Only files/folders/extensions listed here will have their content read.
 ONLY_SHOW_CONTENT_FOR = {
+    'expo-client'
     # 'package.json',
     # 'tsconfig.json',
     # '.json',

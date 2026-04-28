@@ -3,5 +3,9 @@
   "private": true,
   "files": [
     "*.json"
-  ]
+  ],
+  "exports": {
+    "./base.json": "./base.json",
+    "./compiled-package.json": "./compiled-package.json"
+  }
 }

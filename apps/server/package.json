@@ -1,0 +1,33 @@
+{
+  "name": "@water/hono",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm with-env tsx watch src/index.ts",
+    "build": "tsup src/index.ts --format esm",
+    "start": "pnpm with-env node dist/index.js",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@trpc/server": "catalog:",
+    "@hono/node-server": "catalog:",
+    "hono": "catalog:",
+    "@water/api": "workspace:*",
+    "@water/auth": "workspace:*",
+    "@water/db": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@water/eslint-config": "workspace:*",
+    "@water/tsconfig": "workspace:*",
+    "tsx": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:"
+  }
+}

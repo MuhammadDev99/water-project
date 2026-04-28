@@ -12,10 +12,11 @@
       "default": "./src/client.ts"
     },
     "./schema": {
-      "types": "./dist/schema.d.ts",
-      "default": "./src/schema.ts"
+      "types": "./src/schemas/index.ts",
+      "default": "./src/schemas/index.ts"
     }
   },
+  "outputDir": "./dist",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
