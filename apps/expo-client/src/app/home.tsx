@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
@@ -10,20 +10,44 @@ export default function Home() {
 
   const handleLogout = async () => {
     await authClient.signOut();
-    router.replace("/"); // Go back to login
+    router.replace("/");
   };
 
   return (
-    <SafeAreaView className="bg-background flex-1 items-center justify-center p-6">
-      <Text className="text-foreground text-2xl font-bold">
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.welcomeText}>
         Welcome Home, {session?.user.name}!
       </Text>
-      <Pressable
-        className="bg-destructive mt-6 w-full rounded-lg p-4"
-        onPress={handleLogout}
-      >
-        <Text className="text-center font-bold text-white">Logout</Text>
+      <Pressable style={styles.logoutButton} onPress={handleLogout}>
+        <Text style={styles.logoutButtonText}>Logout</Text>
       </Pressable>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 24,
+    backgroundColor: "#FFFFFF", // Use your theme background
+  },
+  welcomeText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#09090B",
+  },
+  logoutButton: {
+    backgroundColor: "#ef4444", // Destructive red
+    marginTop: 24,
+    width: "100%",
+    borderRadius: 8,
+    padding: 16,
+  },
+  logoutButtonText: {
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "#FFFFFF",
+  },
+});

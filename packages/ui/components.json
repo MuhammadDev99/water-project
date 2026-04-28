@@ -3,12 +3,6 @@
   "style": "new-york",
   "rsc": true,
   "tsx": true,
-  "tailwind": {
-    "config": "",
-    "css": "unused.css",
-    "baseColor": "zinc",
-    "cssVariables": true
-  },
   "aliases": {
     "utils": "@water/ui",
     "components": "src/",

@@ -50,11 +50,9 @@
     "@water/api": "workspace:*",
     "@water/eslint-config": "workspace:*",
     "@water/prettier-config": "workspace:*",
-    "@water/tailwind-config": "workspace:*",
     "@water/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "prettier": "catalog:",
-    "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
   "prettier": "@water/prettier-config"
