@@ -1,3 +1,4 @@
+import { Platform } from "react-native";
 import { QueryClient } from "@tanstack/react-query";
 import { createTRPCClient, httpBatchLink, loggerLink } from "@trpc/client";
 import { createTRPCOptionsProxy } from "@trpc/tanstack-react-query";
@@ -29,14 +30,22 @@ export const trpc = createTRPCOptionsProxy<AppRouter>({
       httpBatchLink({
         transformer: superjson,
         url: `${getBaseUrl()}/api/trpc`,
+        fetch(url, options) {
+          return fetch(url, {
+            ...options,
+            credentials: "include",
+          });
+        },
         headers() {
           const headers = new Map<string, string>();
           headers.set("x-trpc-source", "expo-react");
 
           // This is vital for Hono to recognize your session!
-          const cookies = authClient.getCookie();
-          if (cookies) {
-            headers.set("Cookie", cookies);
+          if (Platform.OS !== "web") {
+            const cookies = authClient.getCookie();
+            if (cookies) {
+              headers.set("Cookie", cookies);
+            }
           }
           return Object.fromEntries(headers); // Ensure it's a plain object
         },

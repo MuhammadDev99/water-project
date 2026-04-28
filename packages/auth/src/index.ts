@@ -30,7 +30,7 @@ export function initAuth<
       expo(),
       ...(options.extraPlugins ?? []),
     ],
-    trustedOrigins: ["expo://"],
+    trustedOrigins: ["expo://", "http://localhost:8081"],
     onAPIError: {
       onError(error, ctx) {
         console.error("BETTER AUTH API ERROR", error, ctx);

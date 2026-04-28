@@ -6,6 +6,9 @@ import { getBaseUrl } from "./base-url";
 
 export const authClient = createAuthClient({
   baseURL: getBaseUrl(),
+  fetchOptions: {
+    credentials: "include",
+  },
   plugins: [
     expoClient({
       scheme: "expo",
